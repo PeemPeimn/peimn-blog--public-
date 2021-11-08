@@ -9,7 +9,7 @@ const NavBar = props => {
   return (
     <Box className = { styles.nav }>
 
-      <Link href='home' className = 'peimn.' display = 'flex' margin='0px 40px 0px 0px' textDecoration='none !important' fontWeight='400'>
+      <Link href='home' className = 'peimn.' display = 'flex' margin='0px 80px 0px 0px' textDecoration='none !important' fontWeight='400'>
         <Box className = { styles.letter + " " + styles.p }>p</Box>
         <Box className = { styles.letter + " " + styles.e }>e</Box>
         <Box className = { styles.letter + " " + styles.i }>i</Box>
@@ -35,12 +35,12 @@ const NavBar = props => {
           <SearchIcon w='20px' h='20px'/>
         </LinkItem>
 
-        <LinkItem href="https://github.com/PeemPeimn" p='8px 10px 0px 10px' marginLeft='40px'>
-          <IoLogoGithub size={32} color='white'/>
+        <LinkItem href="https://github.com/PeemPeimn" p='8px 10px 0px 10px' marginLeft='80px'>
+          <IoLogoGithub size={32} color='black'/>
         </LinkItem>
 
         <LinkItem href="https://www.linkedin.com/in/pheamwaruch-intamool-0b3297216" p='8px 10px 0px 10px'>
-          <IoLogoLinkedin size={32} color='white'/>
+          <IoLogoLinkedin size={32} color='black'/>
         </LinkItem>
         
  
@@ -58,8 +58,10 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
     <NextLink href={href} passHref>
       <Link
         className={ styles.navLink }
-        p='8px 10px 0px 10px'
-        color={active ? 'white' : 'gray'}
+        m='0px 5px 0px 5px'
+        p='8px 20px 0px 20px'
+        borderRadius={10}
+        bgColor={active ? 'rgba(252, 213, 206, 0.7)' : undefined}
         _target={_target}
         textDecoration = 'none !important'
         {...props}
