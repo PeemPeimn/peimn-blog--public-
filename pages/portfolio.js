@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title> Home - peimn. </title>
+        <title> Portfolio - peimn. </title>
       </Head>
     </>
   )
