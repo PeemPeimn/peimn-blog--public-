@@ -8,11 +8,16 @@
   font-weight: 300;
   display: flex;
   justify-content: center;
+  user-select: none;
 }
 
 .letter {
   padding: 0px 2px 2px 2px;
   font-size: 32px;
+}
+
+.phonenav {
+  display: none;
 }
 
 .letter:hover {
@@ -41,4 +46,31 @@
 .navLink:hover {
   background-color: rgba(254, 197, 187, 0.459);
   border-radius: 10px;
+}
+
+.normalBox {
+  display: flex;
+}
+
+.menuItem {
+  margin: 0px !important;
+}
+
+.menuItem:hover {
+  background-color: rgba(255, 255, 255, 0.459);
+  border: 2px;
+  border-color: rgb(202, 153, 111);
+}
+
+@media screen and (max-width: 850px) {
+  .nav {
+    justify-content: space-between;
+    padding: 0px 40px 0px 40px;
+  }
+  .normalBox {
+    display: none;
+  }
+  .phonenav {
+    display: flex;
+  }
 }
