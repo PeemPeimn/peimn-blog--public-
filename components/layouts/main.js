@@ -1,8 +1,11 @@
 import NavBar from '../navbar'
 
-const Layout = ({ router }) => {
+const Layout = ({ children , router }) => {
   return (
-    <NavBar path={router.asPath} />
+    <>
+      <NavBar path={router.asPath} />
+      {children}
+    </>
   )
 }
 

@@ -6,8 +6,8 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <ChakraProvider>
       <Layout router={router}>
+        <Component {...pageProps} />
       </Layout>
-      <Component {...pageProps} />
     </ChakraProvider>
   )
 }

@@ -10,9 +10,10 @@ html {
 }
 
 body {
-  padding: 0;
+  padding-top: 0;
   margin: 0;
   font-family: "Kanit" !important;
+  font-size: 20px;
 }
 
 a {
