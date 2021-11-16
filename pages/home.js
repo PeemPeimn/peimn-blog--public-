@@ -1,22 +1,41 @@
 import Head from 'next/head'
-import { Box, Divider } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import styles from '../styles/home.module.css'
 import Card from '../components/card'
+import ModelLoader from '../components/dog-container'
+import dynamic from 'next/dynamic'
+import { InfoOutlineIcon, ExternalLinkIcon } from '@chakra-ui/icons'
+import {  Center, Box, Button, Grid, Link,
+          Popover,
+          PopoverTrigger,
+          PopoverContent,
+          PopoverHeader,
+          PopoverBody,
+          PopoverArrow,
+          PopoverCloseButton } from '@chakra-ui/react'
+
+
+const Dog = dynamic(() => import('../components/dog'), {
+  ssr: false,
+  loading: () => <ModelLoader />
+})
 
 const Morning = () => {
   return (
-      <Box textAlign='center' className={styles.greetings} marginTop={20} marginBottom={20}>
-        <Box fontSize={36} fontWeight={400}  marginBottom={5}>
+    <Box display='flex' justifyContent='center' flexDirection='column'>
+      <Box className={styles.greetings} margin='20px 2px 20px 2px'>
+        <Box fontSize={28} fontWeight={400} >
           Good Morning!
         </Box>
-        <Divider />
-        <Box>
-          <p>Another day has just started. Do you want to join me for a cup of coffee?</p>
-          <p>I don&apos;t know how hard your yesterday was. But cheer up!</p>
-          <p>Today is a new beginning. May this day go as beautifully as you want.</p>
-        </Box>
       </Box>
+      <Box textAlign='justify' maxW='560px' padding={5}>
+        &emsp;My name is Pheamwaruch Intamool. You can also call me Peem.
+        I am currently a computer engineering student at Kasetsart University.
+        <br />
+        &emsp;The main propose of this website is hosting my portfolio and my blog.
+        I hope you will learn more about me from this website !
+      </Box>
+    </Box>
   )
 }
 
@@ -44,7 +63,6 @@ const quote = (hour) => {
 
 
 export default function Home() {
-
   
   return (
     <Layout>
@@ -52,8 +70,7 @@ export default function Home() {
         <title> Home - peimn. </title>
       </Head>
 
-      
-      <Box display='flex' justifyContent='center' backgroundColor='transparent' >
+      <Box display='flex' justifyContent='center' backgroundColor='transparent' alignItems='center' margin='20px 5px -20px 5px'>
         <Box></Box>
 
         {Morning()}
@@ -61,147 +78,42 @@ export default function Home() {
         <Box></Box>
       </Box>
 
-      <Card />
-      <div className='hello'>
+      <Dog />
 
-    
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-      <p>Some text some text some text some text..      Some text some text some text some text..</p>
-    </div>
+      <Center>
+        <ModelDetails />
+      </Center>
+      <Center>
+        <Box textAlign='justify' maxW='560px' padding={5}>
+          &emsp;Oh ! uhmm... by the way, I found this cute little dog model and purchased it. 
+          So I&apos;m just going to show it up here.
+        </Box>
+      </Center>
+      <Center marginBottom='30px'>Below is a navigator through my website. Please enjoy !</Center>
+
+      <Grid className={styles.cardFlex} display='flex' justifyContent='center' backgroundColor='transparent' gap={8}>
+        <Card />
+        <Card />
+      </Grid>
+
     </Layout>
+  )
+}
+
+const ModelDetails = () => {
+  return (
+      <Popover >
+        <PopoverTrigger>
+          <Button fontSize='12px' marginTop={-10} marginBottom={5}>Model Details &nbsp;<InfoOutlineIcon /></Button>
+        </PopoverTrigger>
+        <PopoverContent fontSize='14px'>
+          <PopoverArrow />
+          <PopoverCloseButton />
+          <PopoverHeader>
+            <Link href='https://www.cgtrader.com/3d-models/animals/mammal/oscar-the-dog-quirky-wacky-pet-animal-series'>Oscar The Dog &nbsp;<ExternalLinkIcon/></Link>
+          </PopoverHeader>
+          <PopoverBody>Author: omabuarts<br/>Purchased via cgtrader.com<br/>on 2021-11-15</PopoverBody>
+        </PopoverContent>
+      </Popover>
   )
 }

@@ -16,9 +16,9 @@ const Card = (props) => {
   }
   const router = useRouter()
   return (
-    <Box maxW="700px" borderWidth="2px" borderRadius="10px" overflow="hidden" boxShadow='0px 0px 4px' marginTop='5px' marginBottom='5px' backgroundColor='white'>
+    <Box className={styles.card} maxW="400px" borderRadius="20px" overflow="hidden" boxShadow='0px 0px 4px' marginTop='5px' marginBottom='5px' marginLeft='5px' marginRight='5px' backgroundColor='#f8edeb'>
       <Link onClick={()=>{router.push("https://youtube.com")}}>
-        <Box maxW="700px" height="500px" display="flex" justifyContent="center" overflow="hidden">
+        <Box maxH="500px" display="flex" justifyContent="center" overflow="hidden">
           <Image src={property.imageUrl} alt={property.imageAlt} />
         </Box>
       </Link>
@@ -41,7 +41,7 @@ const Card = (props) => {
         
         <Box height='140px' position='relative'>
 
-          <Box px='5px' fontSize='26px' isTruncated>
+          <Box px='5px' fontSize='20px' isTruncated>
             ไอบอสเอ๊ย
           </Box>
           <Text px='5px' noOfLines={2}>

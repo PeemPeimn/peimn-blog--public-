@@ -15,7 +15,7 @@ const Layout = ({ children }) => (
     exit="exit"
     variants={variants}
     transition={{ duration: 0.7, type: 'easeIn' }}
-    style={{ position: 'relative' , paddingTop: '50px', backgroundColor: 'rgba(252, 213, 206)' }}
+    style={{ position: 'relative' , paddingTop: '50px', backgroundColor: '#fae1dd' }}
   >
     <>
       {children}
