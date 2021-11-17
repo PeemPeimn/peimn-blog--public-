@@ -1,11 +1,14 @@
 import NextLink from 'next/link'
-import { Box, Link, IconButton, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
 import styles from '../styles/navbar.module.css'
+import { Box, Link, IconButton, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import { SearchIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 
 const NavBar = props => {
   const { path } = props
+  const router = useRouter()
+
   return (
     <Box className = { styles.nav }>
 
@@ -54,9 +57,10 @@ const NavBar = props => {
         <Menu>
           <MenuButton as={ IconButton } icon={ <HamburgerIcon /> } margin='4px 0px 0px 10px' backdropBlur='10px' opacity={0.7} border='2px' borderColor='hsl(9, 97%, 86%)'/>
           <MenuList textDecoration='none !important' fontSize='20px' backdropBlur='10px' backgroundColor='hsl(7, 65%, 95%, 1)'>
-            <MenuItem className={styles.menuItem} as={LinkItem} href='/blog'>Blog</MenuItem>
-            <MenuItem className={styles.menuItem} as={LinkItem} href='/portfolio'>Porfolio</MenuItem>
-            <MenuItem className={styles.menuItem} as={LinkItem} href='/about'>About</MenuItem>
+            <MenuItem className={styles.menuItem} as={LinkItem} href="/home">Home</MenuItem>
+            <MenuItem className={styles.menuItem} as={LinkItem} href="/blog">Blog</MenuItem>
+            <MenuItem className={styles.menuItem} as={LinkItem} href="/portfolio">Porfolio</MenuItem>
+            <MenuItem className={styles.menuItem} as={LinkItem} href="/about">About</MenuItem>
           </MenuList>
         </Menu>
 

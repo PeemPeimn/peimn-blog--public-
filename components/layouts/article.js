@@ -5,7 +5,7 @@ import { Box } from '@chakra-ui/react'
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
   enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: -0, y: 20 }
+  exit: { opacity: 0, x: 0, y: 20 }
 }
 
 const Layout = ({ children }) => (
@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
     animate="enter"
     exit="exit"
     variants={variants}
-    transition={{ duration: 0.7, type: 'easeIn' }}
+    transition={{ duration: 1, type: 'easeIn' }}
     style={{ position: 'relative' , paddingTop: '50px', backgroundColor: '#fae1dd' }}
   >
     <>

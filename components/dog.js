@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
-import { ModelSpinner, ModelContainer } from '../components/dog-container'
+import { ModelSpinner, ModelContainer } from '../components/model-container'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -51,8 +51,6 @@ const Dog = () => {
       container.appendChild(renderer.domElement)
       setRenderer(renderer)
 
-      // 640 -> 240
-      // 8   -> 6
       const scale = 2.2
       const camera = new THREE.OrthographicCamera(
         -scale,

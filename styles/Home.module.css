@@ -6,10 +6,6 @@
   text-align: center;
 }
 
-.cardFlex {
-  flex-direction: row;
-}
-
 @media screen and (max-width: 850px) {
   .cardFlex {
     flex-direction: column;

@@ -1,58 +1,95 @@
-import { Badge, Box, Button, Divider, Image, Link, Text } from "@chakra-ui/react"
 import styles from "../styles/card.module.css"
 import { useRouter } from 'next/router'
 import { ArrowForwardIcon } from "@chakra-ui/icons"
+import { Badge, Box, Button, Divider, Image, Link, LinkBox, LinkOverlay, Text,       
+        Popover,
+        PopoverTrigger,
+        PopoverContent,
+        PopoverHeader,
+        PopoverBody,
+        PopoverArrow,
+        PopoverCloseButton } from "@chakra-ui/react"
+        
+
+const Tag = (props) => {
+  const name = props.name
+  const tagColor = props.tagColor
+  let link
+
+  if ( name === "blog" || name === "work" )
+    link = "/" + (name === "work" ? "portfolio": "blog")
+  else
+    link = "/search?word=" + name
+
+  return (
+    <LinkBox>
+      <LinkOverlay href={link}>
+        <Badge borderRadius="full" px="2" colorScheme={ tagColor ? tagColor: "teal"}>
+          {name}
+        </Badge>
+      </LinkOverlay>
+    </LinkBox>
+  )
+}
+
+function tag_generator(tags) {
+  let Tags=[]
+  for (const [index, tag] of tags.entries()) {
+    Tags.push(<Tag key={index.toString()} name={tag} />)
+  }
+  return Tags
+}
 
 const Card = (props) => {
+  
+  
   const property = {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    baths: 2,
-    title: "Modern home in city center in the heart of historic Los Angeles",
-    formattedPrice: "$1,900.00",
-    reviewCount: 34,
-    rating: 4,
+    imageUrl: props.imageUrl,
+    imageAlt: props.imageAlt,
+    imageW: props.imageW,
+    imageH: props.imageH,
+    textH: props.textH,
+    title: props.title,
+    text: props.text,
+    link: props.link,
+    category: props.category,
+    tags: props.tags,
+
   }
-  const router = useRouter()
+  
+  const Tags = tag_generator(property.tags)
+
   return (
-    <Box className={styles.card} maxW="400px" borderRadius="20px" overflow="hidden" boxShadow='0px 0px 4px' marginTop='5px' marginBottom='5px' marginLeft='5px' marginRight='5px' backgroundColor='#f8edeb'>
-      <Link onClick={()=>{router.push("https://youtube.com")}}>
-        <Box maxH="500px" display="flex" justifyContent="center" overflow="hidden">
-          <Image src={property.imageUrl} alt={property.imageAlt} />
+    <Box className={styles.card} maxW="400px" borderRadius="20px" overflow="hidden" boxShadow='0px 0px 4px' m="10px" backgroundColor='#f8edeb'>
+      <Link href={property.link}>
+        <Box maxH="250px" display="flex" justifyContent="center" overflow="hidden">
+          <Image src={property.imageUrl} alt={property.imageAlt} objectFit='fill'/>
         </Box>
       </Link>
       <Divider />
-      <Box p={4}>
-        <Box display="flex" alignItems="baseline" gridGap={1} py={2}>
-          <Badge borderRadius="full" px="2" colorScheme="teal">
-            Blog
-          </Badge>
-          <Badge borderRadius="full" px="2" colorScheme="teal">
-            Review
-          </Badge>
-          <Badge borderRadius="full" px="2" colorScheme="teal">
-            Book
-          </Badge>
-          <Badge borderRadius="full" px="2" colorScheme="teal">
-            Game
-          </Badge>
+      <Box py={2} px={4}>
+        <Box display="flex" gridGap={1} py={2} flexWrap='wrap'>
+          { property.category === "blog" ? <Tag name="blog" tagColor="blue"/> : <Tag name="work" tagColor="red"/>}
+          { Tags.length > 4 ? Tags.slice(0,4) : Tags }
         </Box>
         
-        <Box height='140px' position='relative'>
+        <Box height='125px' position='relative'>
 
-          <Box px='5px' fontSize='20px' isTruncated>
-            ไอบอสเอ๊ย
+          <Box px='5px' fontSize='20px'>
+            {property.title}
           </Box>
-          <Text px='5px' noOfLines={2}>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+          <Text fontSize="16px" px='5px' noOfLines={2}>
+            {property.text}
           </Text>
-          <Button position='absolute' right='0px'
-            onClick = {() => router.push('https://youtube.com')}
-          >
-            Read More <ArrowForwardIcon marginLeft={2} />
-          </Button>
         </Box>
+
+        <LinkBox>
+          <LinkOverlay href={property.link}>
+            <Button position='absolute' right='0px' bottom='0px' m='6px' bgColor='#ffd7ba' _hover={{ bg: "#fec89a" }}>
+              Read More < ArrowForwardIcon marginLeft={2} />
+            </Button>
+          </LinkOverlay>
+        </LinkBox>
 
       </Box>
     
@@ -60,3 +97,26 @@ const Card = (props) => {
   )
 }
 export default Card
+
+
+const TagsOverflow = (tags) => {
+  return (
+    <Popover >
+      <PopoverTrigger>
+        <Badge as={Button} borderRadius="full" px="2" colorScheme="teal">
+        ···
+        </Badge>
+      </PopoverTrigger>
+      <PopoverContent fontSize='14px'>
+        <PopoverArrow />
+        <PopoverCloseButton />
+        <PopoverHeader>
+          Tags
+        </PopoverHeader>
+        <PopoverBody>
+          {tag_generator(tags)}
+        </PopoverBody>
+      </PopoverContent>
+    </Popover>
+  )
+}
