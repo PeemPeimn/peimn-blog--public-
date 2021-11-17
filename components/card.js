@@ -1,5 +1,5 @@
 import styles from "../styles/card.module.css"
-import { useRouter } from 'next/router'
+import NextLink from "next/link"
 import { ArrowForwardIcon } from "@chakra-ui/icons"
 import { Badge, Box, Button, Divider, Image, Link, LinkBox, LinkOverlay, Text,       
         Popover,
@@ -22,13 +22,13 @@ const Tag = (props) => {
     link = "/search?word=" + name
 
   return (
-    <LinkBox>
-      <LinkOverlay href={link}>
+    <NextLink href={link}>
+      <Link>
         <Badge borderRadius="full" px="2" colorScheme={ tagColor ? tagColor: "teal"}>
           {name}
         </Badge>
-      </LinkOverlay>
-    </LinkBox>
+      </Link>
+    </NextLink>
   )
 }
 
@@ -61,11 +61,14 @@ const Card = (props) => {
 
   return (
     <Box className={styles.card} maxW="400px" borderRadius="20px" overflow="hidden" boxShadow='0px 0px 4px' m="10px" backgroundColor='#f8edeb'>
-      <Link href={property.link}>
-        <Box maxH="250px" display="flex" justifyContent="center" overflow="hidden">
-          <Image src={property.imageUrl} alt={property.imageAlt} objectFit='fill'/>
-        </Box>
-      </Link>
+      <NextLink href={property.link}>
+        <Link href={property.link}>
+          <Box maxH="250px" display="flex" justifyContent="center" overflow="hidden">
+            <Image src={property.imageUrl} alt={property.imageAlt} objectFit='fill'/>
+          </Box>
+        </Link>
+      </NextLink>
+  
       <Divider />
       <Box py={2} px={4}>
         <Box display="flex" gridGap={1} py={2} flexWrap='wrap'>
@@ -81,15 +84,14 @@ const Card = (props) => {
           <Text fontSize="16px" px='5px' noOfLines={2}>
             {property.text}
           </Text>
-        </Box>
-
-        <LinkBox>
-          <LinkOverlay href={property.link}>
+          
+          <NextLink as={Link} href={property.link}>
             <Button position='absolute' right='0px' bottom='0px' m='6px' bgColor='#ffd7ba' _hover={{ bg: "#fec89a" }}>
               Read More < ArrowForwardIcon marginLeft={2} />
             </Button>
-          </LinkOverlay>
-        </LinkBox>
+          </NextLink>
+        </Box>
+
 
       </Box>
     

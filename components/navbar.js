@@ -12,7 +12,8 @@ const NavBar = props => {
   return (
     <Box className = { styles.nav }>
 
-      <Link href='home' className = 'peimn.' display = 'flex' margin='0px 80px 0px 0px' textDecoration='none !important' fontWeight='400'>
+      <NextLink href='/home'>
+      <Link className = 'peimn.' display = 'flex' margin='0px 80px 0px 0px' textDecoration='none !important' fontWeight='400'>
         <Box className = { styles.letter + " " + styles.p }>p</Box>
         <Box className = { styles.letter + " " + styles.e }>e</Box>
         <Box className = { styles.letter + " " + styles.i }>i</Box>
@@ -20,6 +21,7 @@ const NavBar = props => {
         <Box className = { styles.letter + " " + styles.n }>n</Box>
         <Box className = { styles.letter + " " + styles.dot }>.</Box>
       </Link>
+      </NextLink>
 
       <Box className = { styles.normalBox }>
         <LinkItem href="/blog" path={path}>
@@ -38,11 +40,11 @@ const NavBar = props => {
           <SearchIcon w='20px' h='20px'/>
         </LinkItem>
 
-        <LinkItem href="https://github.com/PeemPeimn" p='8px 10px 0px 10px' marginLeft='80px'>
+        <LinkItem href="https://github.com/PeemPeimn" p='8px 10px 0px 10px' marginLeft='80px' isExternal>
           <IoLogoGithub size={32} color='black'/>
         </LinkItem>
 
-        <LinkItem href="https://www.linkedin.com/in/pheamwaruch-intamool-0b3297216" p='8px 10px 0px 10px'>
+        <LinkItem href="https://www.linkedin.com/in/pheamwaruch-intamool-0b3297216" p='8px 10px 0px 10px' isExternal>
           <IoLogoLinkedin size={32} color='black'/>
         </LinkItem>
         

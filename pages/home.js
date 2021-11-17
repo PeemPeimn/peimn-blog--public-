@@ -62,7 +62,7 @@ const ModelDetails = () => {
           <PopoverArrow />
           <PopoverCloseButton />
           <PopoverHeader>
-            <Link href='https://www.cgtrader.com/3d-models/animals/mammal/oscar-the-dog-quirky-wacky-pet-animal-series'>Oscar The Dog &nbsp;<ExternalLinkIcon/></Link>
+            <Link href='https://www.cgtrader.com/3d-models/animals/mammal/oscar-the-dog-quirky-wacky-pet-animal-series' isExternal >Oscar The Dog &nbsp;<ExternalLinkIcon/></Link>
           </PopoverHeader>
           <PopoverBody>Author: omabuarts<br/>Purchased via cgtrader.com<br/>on 2021-11-15</PopoverBody>
         </PopoverContent>
@@ -123,7 +123,7 @@ export default function Home() {
 
       <Center>
         <Box fontSize='16px' fontWeight='100' padding='20px'>
-          CR: pixiv <Link href="https://www.pixiv.net/en/users/29737845">くぅもんせ</Link> san
+          CR: pixiv <Link href="https://www.pixiv.net/en/users/29737845" isExternal>くぅもんせ</Link> san
         </Box>
       </Center>
 

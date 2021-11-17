@@ -4,11 +4,8 @@ html {
   background-color: #fae1dd;
 }
 
-.hello {
-  text-align: center;
-}
-
 body {
+  background-color: #fae1dd !important;
   padding-top: 0;
   margin: 0;
   font-family: "Kanit" !important;
