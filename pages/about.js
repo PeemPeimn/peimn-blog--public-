@@ -1,11 +1,8 @@
-import Head from 'next/head'
-
-export default function Home() {
+const About = () => {
   return (
     <>
-      <Head>
-        <title> About - peimn. </title>
-      </Head>
     </>
   )
 }
+
+export default About

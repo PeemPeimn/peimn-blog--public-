@@ -6,6 +6,7 @@ import {
 const Tag = (props) => {
   const name = props.name
   const tagColor = props.tagColor
+  const key = props.key
   let link
 
   if ( name === "blog" || name === "work" )
@@ -14,7 +15,7 @@ const Tag = (props) => {
     link = "/search?word=" + name
 
   return (
-    <NextLink href={link}>
+    <NextLink href={link} key={key}>
       <Link>
         <Badge borderRadius="full" px="2" colorScheme={ tagColor ? tagColor: "teal"}>
           {name}
