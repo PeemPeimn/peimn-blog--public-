@@ -12,9 +12,9 @@ const R_Metadata = R_PeimnBlog.container("Metadata")
 const R_Posts = R_PeimnBlog.container("Posts")
 
 
-export async function postToDB(BlogHeader, Contents) {
+export async function postToDB(BlogHeader, BlogContents) {
   try {
-    const { resource: createdPost } = await W_Posts.items.create(Contents);
+    const { resource: createdPost } = await W_Posts.items.create(BlogContents);
     console.log(`\r\nCreated new post: ${createdPost.id}`);
     let Metadata = BlogHeader
     Metadata["id"] = createdPost.id

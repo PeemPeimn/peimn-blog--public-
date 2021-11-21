@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // params contains the post `id`.
-  // If the route is like /posts/1, then params.id is 1
+  // If the route is like /blog/1, then params.id is 1
   const BlogHeader = await getOneMetaData(params.blog_id)
   const BlogContents = await getOnePost(params.blog_id)
   const data = { BlogHeader: BlogHeader, BlogContents: BlogContents }
@@ -82,7 +82,11 @@ export default function Blog({ data }) {
                         paddingY="20px"
                         paddingX="30px" 
           >
-            <SkeletonText mt={4} noOfLines={30} spacing="6" />
+            <SkeletonText my={8} noOfLines={1} spacing="7" maxWidth="60%"/>
+            <SkeletonText my={8} noOfLines={1} spacing="7" maxWidth="40%"/>
+            <SkeletonText my={8} noOfLines={1} spacing="7" maxWidth="70%"/>
+
+            <SkeletonText mt={300} noOfLines={30} spacing="5" />
           </Container>
         </Flex>
       </Layout>

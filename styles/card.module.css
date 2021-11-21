@@ -9,23 +9,19 @@
 @keyframes focus {
   0% {
     transform: scale(1);
-    box-shadow: 0px 0px 4px;
   }
 
   100% {
     transform: scale(1.01);
-    box-shadow: 0px 0px 15px;
   }
 }
 
 @keyframes unfocus {
   100% {
     transform: scale(1);
-    box-shadow: 0px 0px 4px;
   }
 
   0% {
     transform: scale(1.01);
-    box-shadow: 0px 0px 15px;
   }
 }

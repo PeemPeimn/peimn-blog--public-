@@ -35,7 +35,7 @@ const Card = (props) => {
 
 
   return (
-    <Box className={styles.card} maxW="400px" borderRadius="20px" overflow="hidden" boxShadow='0px 0px 4px' m="10px" backgroundColor='#f8edeb'>
+    <Box className={styles.card} maxW="400px" borderRadius="20px" overflow="hidden" boxShadow='0px 10px 10px 1px rgba(0, 0, 0, 0.2)' my="10px" mx="20px" backgroundColor='#f8edeb'>
       <NextLink href={property.link}>
         <Link href={property.link}>
           <Box maxH="250px" display="flex" justifyContent="center" overflow="hidden">
