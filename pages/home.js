@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/layouts/article'
-import styles from '../styles/home.module.css'
+import styles from '../styles/myhome.module.css'
 import Card from '../components/card'
 import ModelLoader from '../components/model-container'
 import dynamic from 'next/dynamic'

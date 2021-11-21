@@ -2,6 +2,7 @@
   background-color: #f8edeb;
   backdrop-filter: blur(20px);
   border-radius: 10px;
+  border: 0px;
   padding: 2px;
   text-align: center;
 }
