@@ -58,4 +58,4 @@ jobs:
           app-name: 'peimn-blog'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B1ED4D24601E4D2A87002E511A72FEE1 }}
-          package: .
+          package: ./out
