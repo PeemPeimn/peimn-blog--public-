@@ -27,7 +27,7 @@ jobs:
           yarn run build
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./out -r
+        run: zip release.zip ./out/* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
