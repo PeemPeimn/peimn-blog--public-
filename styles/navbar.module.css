@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   user-select: none;
+  box-shadow: 0px 1px 5px 1px rgb(0, 0, 0, 0.06);
   z-index: 100;
 }
 
@@ -44,9 +45,12 @@
   color: #4cc9f0;
 }
 
+.navLink {
+  animation: UNHOVER 0.7s forwards;
+}
+
 .navLink:hover {
-  background-color: rgba(254, 197, 187, 0.459);
-  border-radius: 10px;
+  animation: HOVER 0.7s forwards;
 }
 
 .normalBox {
@@ -55,12 +59,11 @@
 
 .menuItem {
   margin: 0px !important;
+  animation: UNHOVER 0.7s forwards;
 }
 
 .menuItem:hover {
-  background-color: rgba(255, 255, 255, 0.459);
-  border: 2px;
-  border-color: rgb(202, 153, 111);
+  animation: HOVER 1s forwards;
 }
 
 @media screen and (max-width: 850px) {
@@ -73,5 +76,23 @@
   }
   .phonenav {
     display: flex;
+  }
+}
+
+@keyframes HOVER {
+  100% {
+    background-color: rgba(254, 197, 187, 0.75);
+  }
+  0% {
+    background-color: rgb(248, 237, 235, 0);
+  }
+}
+
+@keyframes UNHOVER {
+  0% {
+    background-color: rgba(254, 197, 187, 0.75);
+  }
+  100% {
+    background-color: rgb(248, 237, 235, 0);
   }
 }

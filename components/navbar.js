@@ -36,7 +36,7 @@ const NavBar = props => {
           About
         </LinkItem>
       
-        <LinkItem href="/search" p='5px 10px 0px 10px' >
+        <LinkItem href="/search" path={path} p='5px 10px 0px 10px' >
           <SearchIcon w='20px' h='20px'/>
         </LinkItem>
 
@@ -82,8 +82,9 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
         className={ styles.navLink }
         m='0px 5px 0px 5px'
         p='8px 20px 0px 20px'
-        borderRadius={10}
         bgColor={active ? 'rgba(252, 213, 206, 0.7)' : undefined}
+        borderBottom={active ? "2px" : "0px"}
+        borderColor="black"
         _target={_target}
         textDecoration = 'none !important'
         {...props}

@@ -9,6 +9,7 @@ body {
   padding-top: 0;
   margin: 0;
   font-family: "Kanit" !important;
+  font-weight: 400;
   font-size: 17px;
 }
 
@@ -19,4 +20,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+*:focus {
+  box-shadow: none !important;
 }
