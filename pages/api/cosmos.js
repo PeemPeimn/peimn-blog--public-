@@ -38,3 +38,16 @@ export async function getOneMetaData(id) {
   return meta
 }
 
+export async function getAllId(category) {
+  const querySpec = {
+    query: `SELECT c.id from c WHERE c.category='${category}'`
+  }
+
+  const { resources: items } = await R_Metadata.items
+    .query(querySpec)
+    .fetchAll()
+
+  console.log(items)
+  return items
+}
+

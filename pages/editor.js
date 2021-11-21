@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/layouts/article'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import { postToDB } from './api/cosmos'
+import { postToDB, getAllId } from './api/cosmos'
 import { 
   ContentLoader,
   Title,
@@ -190,9 +190,16 @@ export default function Editor() {
             Upload
           </Button>
         </Center>
+        <Button onClick={test}>
+          TEST
+        </Button>
         </Container>
         
       </Flex>
     </Layout>
   )
+}
+
+async function test() {
+  const ids = await getAllId()
 }

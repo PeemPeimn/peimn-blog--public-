@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../../components/layouts/article'
 import router from 'next/router'
 import { useEffect, useState } from 'react'
-import { getOnePost, getOneMetaData } from '../api/cosmos'
+import { getOnePost, getOneMetaData, getAllId } from '../api/cosmos'
 import { 
   ContentLoader,
   Title,
@@ -17,11 +17,33 @@ import {
   SkeletonText,
   Skeleton } from '@chakra-ui/react'
 
-export default function Blog() {
+
+export async function getStaticPaths() {
+  // Call an external API endpoint to get posts
+  const posts = await getAllId("blog")
+
+  // Get the paths we want to pre-render based on posts
+  const paths = posts.map((post) => ({
+    params: { blog_id: post.id },
+  }))
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+  const BlogHeader = await getOneMetaData(params.blog_id)
+  const BlogContents = await getOnePost(params.blog_id)
+  const data = { BlogHeader: BlogHeader, BlogContents: BlogContents }
+
+  // Pass post data to the page via props
+  return { props: { data } }
+}
+
+export default function Blog({ data }) {
 
   const [ loading, setLoading ] = useState(true)
-  const [ BlogHeader, setHeader ] = useState(undefined)
-  const [ BlogContents, setContents ] = useState(undefined)
+  const { BlogHeader, BlogContents } = data
 
   useEffect( () => {
 
@@ -29,38 +51,17 @@ export default function Blog() {
       
       if (!loading)
         return;
-
-      try {
-        const { blog_id } = router.query
-        await getOneMetaData(blog_id)
-          .then(res => { 
-            if (res === undefined) {
-              router.push("/404")
-            } else 
-            setHeader(res)
-          })
-
-        await getOnePost(blog_id)
-          .then(res => { 
-            if (res === undefined) {
-              router.push("/404")
-            } else 
-            setContents(res)
-          })
-
-        setLoading(false)
-      }
-      catch(err) {
-        console.error(err)
-      }
+      if(BlogHeader===undefined||BlogContents===undefined)
+        router.push("/404")
+      setLoading(false)
     }
     setTimeout(() => {
       fetchData()
     }, 2000)
     
-  }, [loading])
+  }, [loading,BlogHeader,BlogContents])
 
-  if (loading || BlogContents === undefined || BlogHeader === undefined ){
+  if (loading){
 
     return (
       <Layout>
