@@ -69,7 +69,7 @@
 @media screen and (max-width: 850px) {
   .nav {
     justify-content: space-between;
-    padding: 0px 40px 0px 40px;
+    padding: 0px 20px 0px 20px;
   }
   .normalBox {
     display: none;

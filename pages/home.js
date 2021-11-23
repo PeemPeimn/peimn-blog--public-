@@ -110,6 +110,7 @@ export default function Home() {
               category="blog"
               tags={["book","review","game","anime"]}
               fontS={14}
+              key="1111111"
         />
         <Card imageUrl="https://peimnblogpictures.blob.core.windows.net/public/port.jpg"
               imageAlt="Portfolio"
@@ -122,6 +123,7 @@ export default function Home() {
               category="work"
               tags={["stat","ml","web"]}
               fontS={14}
+              key="2222222"
         />
       </Grid>
 

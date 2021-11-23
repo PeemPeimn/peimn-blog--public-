@@ -61,7 +61,7 @@ const NavBar = props => {
           <MenuList textDecoration='none !important' fontSize='20px' backdropBlur='10px' backgroundColor='hsl(0, 100%, 100%, 1)'>
             <MenuItem className={styles.menuItem} as={LinkItem} href="/home">Home</MenuItem>
             <MenuItem className={styles.menuItem} as={LinkItem} href="/blog">Blog</MenuItem>
-            <MenuItem className={styles.menuItem} as={LinkItem} href="/portfolio">Porfolio</MenuItem>
+            <MenuItem className={styles.menuItem} as={LinkItem} href="/portfolio">Portfolio</MenuItem>
             <MenuItem className={styles.menuItem} as={LinkItem} href="/about">About</MenuItem>
           </MenuList>
         </Menu>

@@ -19,18 +19,19 @@ import {
   Image,
   Input,
   Text } from '@chakra-ui/react'
+import Search from './search'
 
 /*
 * Write the blog's header here.
 */
 
-const BlogHeader = {
-    title: "Nanashi Mumei",
+var BlogHeader = {
+    title: "(Work) Nanashi Mumei",
     // The title of the blog
     // string 
     // example => title: "This is the title"
 
-    category: "blog",
+    category: "work",
     // Category of the blog
     // string => "blog" or "work"
 
@@ -150,6 +151,12 @@ export default function Editor() {
   const router = useRouter()
 
   function post() {
+    BlogHeader["search"] =  BlogHeader.title + 
+                          BlogHeader.category +
+                          BlogHeader.tags.join() +
+                          BlogHeader.thumbnailpicture.caption +
+                          BlogHeader.recap
+
     postToDB(BlogHeader, Contents)
     router.push("/blog")
   }
