@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../../components/layouts/article'
 import router from 'next/router'
 import { useEffect, useState } from 'react'
-import { getOnePost, getOneMetaData, getAllId } from '../api/cosmos'
+import { getOnePost, getOneMetaData, getAllId } from '../../lib/cosmos'
 import { 
   ContentLoader,
   Title,
@@ -11,7 +11,7 @@ import {
   ImageModal } from '../../lib/loader'
 
 import { 
-  Container, 
+  Container,
   Flex,
   Image,
   SkeletonText,
@@ -51,15 +51,13 @@ export default function Blog({ data }) {
       
       if (!loading)
         return;
-      if(BlogHeader===undefined||BlogContents===undefined)
-        router.push("/404")
       setLoading(false)
     }
     setTimeout(() => {
       fetchData()
     }, 2000)
     
-  }, [loading,BlogHeader,BlogContents])
+  }, [loading])
 
   if (loading){
 

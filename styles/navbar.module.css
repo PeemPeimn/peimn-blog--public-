@@ -46,11 +46,11 @@
 }
 
 .navLink {
-  animation: UNHOVER 0.7s forwards;
+  animation: UNHOVER 0.8s forwards;
 }
 
 .navLink:hover {
-  animation: HOVER 0.7s forwards;
+  animation: HOVER 0.8s forwards;
 }
 
 .normalBox {
@@ -59,11 +59,11 @@
 
 .menuItem {
   margin: 0px !important;
-  animation: UNHOVER 0.7s forwards;
+  animation: UNHOVER 0.8s forwards;
 }
 
 .menuItem:hover {
-  animation: HOVER 1s forwards;
+  animation: HOVER 0.8s forwards;
 }
 
 @media screen and (max-width: 850px) {

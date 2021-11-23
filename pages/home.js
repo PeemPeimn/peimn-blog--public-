@@ -37,7 +37,7 @@ const Greetings = () => {
   return (
     <Box display='flex' justifyContent='center' flexDirection='column'>
       <Box className={styles.greetings} margin='20px 2px 20px 2px'>
-        <Box fontSize={28} fontWeight={400} >
+        <Box fontSize={28} fontWeight={400} letterSpacing="2px">
           {greet()}
         </Box>
       </Box>
@@ -98,10 +98,10 @@ export default function Home() {
         <Box textAlign="center">Below is a navigator through my website. Please enjoy !</Box>
       </Center>
 
-      <Grid display='flex' flexWrap="wrap" justifyContent='center' backgroundColor='transparent' gap={8}>
+      <Grid display='flex' flexWrap="wrap" justifyContent='center' backgroundColor='transparent'>
         <Card imageUrl="https://peimnblogpictures.blob.core.windows.net/public/coffee.jpg"
               imageAlt="Blog"
-              imageW="600px"
+              imageW="350px"
               imageH="250px"
               imageFit="cover"
               title="Blog"
@@ -109,10 +109,11 @@ export default function Home() {
               link="/blog"
               category="blog"
               tags={["book","review","game","anime"]}
+              fontS={14}
         />
         <Card imageUrl="https://peimnblogpictures.blob.core.windows.net/public/port.jpg"
               imageAlt="Portfolio"
-              imageW="600px"
+              imageW="350px"
               imageH="250px"
               imageFit="cover"
               title="Portfolio"
@@ -120,6 +121,7 @@ export default function Home() {
               link="/portfolio"
               category="work"
               tags={["stat","ml","web"]}
+              fontS={14}
         />
       </Grid>
 

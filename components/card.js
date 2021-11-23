@@ -13,7 +13,7 @@ import {
   
 const Card = (props) => {
   
-  const property = {
+  var property = {
     imageUrl: props.imageUrl,
     imageAlt: props.imageAlt,
     imageW: props.imageW,
@@ -21,12 +21,17 @@ const Card = (props) => {
     imageFit: props.imageFit,
     textH: props.textH,
     title: props.title,
+    fontS: props.fontS,
     text: props.text,
     link: props.link,
+    id: props.id,
     category: props.category,
     tags: props.tags,
 
   }
+
+  property.link = property.link ? property.link : "/" + (property.category === "work" ? "portfolio" : property.category) + "/" + property.id
+  //console.log(property.link)
   
   let Tags=[]
   for (const tag of property.tags) {
@@ -35,7 +40,16 @@ const Card = (props) => {
 
 
   return (
-    <Box className={styles.card} maxW="400px" borderRadius="20px" overflow="hidden" boxShadow='0px 10px 10px 1px rgba(0, 0, 0, 0.2)' my="10px" mx="20px" backgroundColor='#f8edeb'>
+    <Box  key={property.imageUrl} 
+          className={styles.card} 
+          maxW={property.imageW} 
+          borderRadius="20px" 
+          overflow="hidden" 
+          boxShadow='0px 10px 10px 1px rgba(0, 0, 0, 0.2)' 
+          my="20px" mx="20px" 
+          backgroundColor='#f8edeb'
+          position="relative"
+          >
       <NextLink href={property.link}>
         <Link href={property.link}>
           <Box maxH="250px" display="flex" justifyContent="center" overflow="hidden">
@@ -51,24 +65,24 @@ const Card = (props) => {
           { Tags.length > 4 ? Tags.slice(0,4) : Tags }
         </Box>
         
-        <Box height='125px' position='relative'>
+        <Box height='125px'>
 
-          <Box px='5px' fontSize='20px'>
+          <Box px='5px' fontSize={property.fontS + 4}>
             {property.title}
           </Box>
-          <Text fontSize="16px" px='5px' noOfLines={2}>
+          <Text fontSize={property.fontS} px='5px' noOfLines={2}>
             {property.text}
           </Text>
           
-          <NextLink as={Link} href={property.link}>
-            <Button position='absolute' right='0px' bottom='0px' m='6px' bgColor='#ffd7ba' _hover={{ bg: "#fec89a" }}>
-              Read More < ArrowForwardIcon marginLeft={2} />
-            </Button>
-          </NextLink>
         </Box>
 
 
       </Box>
+      <NextLink href={property.link} >
+        <Box as={Button} fontSize={property.fontS} fontWeight="400" position='absolute' right='0px' bottom='0px' m='20px' bgColor='#ffd7ba' _hover={{ bg: "#fec89a" }}>
+          Read More< ArrowForwardIcon boxSize="14px" marginLeft={2} />
+        </Box>
+      </NextLink>
     
     </Box>
   )

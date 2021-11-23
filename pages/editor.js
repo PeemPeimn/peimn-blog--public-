@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/layouts/article'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import { postToDB, getAllId } from './api/cosmos'
+import { postToDB, getAllId } from '../lib/cosmos'
 import { 
   ContentLoader,
   Title,
@@ -25,7 +25,7 @@ import {
 */
 
 const BlogHeader = {
-    title: "Review: The Midnight Library",
+    title: "Nanashi Mumei",
     // The title of the blog
     // string 
     // example => title: "This is the title"
@@ -34,7 +34,7 @@ const BlogHeader = {
     // Category of the blog
     // string => "blog" or "work"
 
-    tags: ["review","book","mental health","psychology"],
+    tags: ["review","hololive","holoEN"],
     // The tags of the blog
     // string[]
     // example => tags: ["Tag1", "Tag2", "Tag3"]
@@ -45,8 +45,8 @@ const BlogHeader = {
     // The default value is set to the date when this blog is posted
 
     thumbnailpicture: {
-      src: "https://peimnblogpictures.blob.core.windows.net/public/20211118_144214.jpg",
-      caption: "The Midnight Library By Matt Haig"
+      src: "https://peimnblogpictures.blob.core.windows.net/public/mumei-nanashi-mumei.gif",
+      caption: "Pikatto rune hikareba~~~"
     },
     // The thumbnail picture of the blog
     // string
@@ -55,7 +55,7 @@ const BlogHeader = {
     //   caption: "the sample pic"
     // }
 
-    recap: "บอกเล่าความรู้สึกจากหนังสือ The Midnight Library โดยคุณ Matt Haig",
+    recap: "I'm a mumei simp",
     // A short text explaining the content of the post
     // string
     // example => recap: "This post is about a man who traveled around the world"
