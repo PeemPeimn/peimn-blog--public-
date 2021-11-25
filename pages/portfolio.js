@@ -63,7 +63,7 @@ export default function WorkHome({ Meta }) {
   return (
     <Layout>
       <Head>
-        <title> Blog - peimn. </title>
+        <title> Portfolio - peimn. </title>
       </Head>
 
     <Flex flexDirection="column" alignItems="center" mt="100px">
@@ -84,7 +84,7 @@ export default function WorkHome({ Meta }) {
             fontWeight="300"
             mx="20px"
             >
-        Like a diary, this blog contains all the memories I want to cherish. 
+        All my projects are in here. So is my dedication. 
       </Box>
       <Box  
             maxWidth="600px"

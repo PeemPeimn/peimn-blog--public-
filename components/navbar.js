@@ -80,7 +80,6 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
     <NextLink href={href} passHref>
       <Link
         className={ styles.navLink }
-        m='0px 5px 0px 5px'
         p='8px 20px 0px 20px'
         bgColor={active ? 'rgba(252, 213, 206, 0.7)' : undefined}
         borderBottom={active ? "2px" : "0px"}

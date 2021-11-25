@@ -52,7 +52,7 @@ const Card = (props) => {
           >
       <NextLink href={property.link}>
         <Link href={property.link}>
-          <Box maxH="250px" display="flex" justifyContent="center" overflow="hidden">
+          <Box maxHeight="200px" display="flex" justifyContent="center" overflow="hidden">
             <Image src={property.imageUrl} alt={property.imageAlt} objectFit={property.imageFit}/>
           </Box>
         </Link>

@@ -8,12 +8,13 @@ import {
   Flex,
   Input,
   IconButton,
-  Spinner
+  Spinner,
  } from '@chakra-ui/react'
 import Card from '../components/card'
 import { useRouter } from 'next/router'
 
 export async function getServerSideProps(router) {
+
   var { word } = router.query
   var Meta = []
   if ( word !== undefined ){
@@ -89,7 +90,7 @@ export default function Search({ Meta, word }) {
             >
 
       </Box>
-      <SearchBar word={word}/>
+      <SearchBar word={word} />
       <Box  
             maxWidth="600px"
             width="90%"
@@ -129,15 +130,20 @@ export default function Search({ Meta, word }) {
 }
 
 const SearchBar = (props) => {
+
   const router = useRouter()
   const [ value, setValue ] = useState(props.word)
-
+  const [ isSubmitted, setSubmit ] = useState(false)
   function handleChange(event) {
     // exclude special characters
     setValue( event.target.value.replace(/[^a-zA-Z0-9\u0E00-\u0E7F]/gi, ""))
   }
 
   function handleSubmit() {
+    setSubmit(true)
+    setInterval( () => {
+      setSubmit(false)
+    }, 500)
     router.push("/search?word="+value)
   }
   return (
@@ -156,7 +162,8 @@ const SearchBar = (props) => {
               }}    
       />
       <IconButton
-        bgColor='#ffd7ba' 
+        isLoading = { isSubmitted }
+        bgColor={ isSubmitted ? '#d8e2dc' : '#ffd7ba' }
         _hover={{ bg: "#fec89a" }}
         borderColor="#d8e2dc !important"
         border="1px"

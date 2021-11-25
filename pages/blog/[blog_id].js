@@ -72,13 +72,13 @@ export default function Blog({ data }) {
                     borderRadius="20px"
                     height="200px"
           />
-          <Container   maxW="container.md" 
-                        backgroundColor="#f8edeb"
-                        borderRadius="20px"
-                        border="2px"
-                        borderColor="#e8e8e4"
-                        paddingY="20px"
-                        paddingX="30px" 
+          <Container  maxW="container.md"
+                      backgroundColor="#f8edeb"
+                      borderRadius="20px"
+                      border="2px"
+                      borderColor="#e8e8e4"
+                      paddingY="20px"
+                      paddingX="30px" 
           >
             <SkeletonText my={8} noOfLines={1} spacing="7" maxWidth="60%"/>
             <SkeletonText my={8} noOfLines={1} spacing="7" maxWidth="40%"/>

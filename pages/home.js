@@ -105,7 +105,7 @@ export default function Home() {
               imageH="250px"
               imageFit="cover"
               title="Blog"
-              text="Hello, this is my blog."
+              text="Like a diary, this blog contains all the memories I want to cherish."
               link="/blog"
               category="blog"
               tags={["book","review","game","anime"]}
@@ -118,10 +118,10 @@ export default function Home() {
               imageH="250px"
               imageFit="cover"
               title="Portfolio"
-              text="Hello, this is my portfolio."
+              text="All my projects are in here. So is my dedication."
               link="/portfolio"
               category="work"
-              tags={["stat","ml","web"]}
+              tags={["web development","JavaScript"]}
               fontS={14}
               key="2222222"
         />
