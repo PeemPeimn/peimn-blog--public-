@@ -1,13 +1,11 @@
 import NextLink from 'next/link'
 import styles from '../styles/navbar.module.css'
 import { Box, Link, IconButton, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import { SearchIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 
 const NavBar = props => {
   const { path } = props
-  const router = useRouter()
 
   return (
     <Box className = { styles.nav }>
