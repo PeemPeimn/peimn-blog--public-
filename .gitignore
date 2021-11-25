@@ -37,8 +37,10 @@ yarn-error.log*
 /pages/editor.js
 
 # keys
-# /keys.js
+/keys.js
 
 # models
-# /public/models/
+/public/models/
 
+# database connections
+/lib/cosmos.js
