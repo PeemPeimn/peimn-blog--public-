@@ -42,5 +42,6 @@ yarn-error.log*
 # models
 /public/models/
 
-# database connections
+# cosmos
 /lib/cosmos.js
+
